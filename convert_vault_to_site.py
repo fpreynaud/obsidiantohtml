@@ -25,6 +25,7 @@ def process_folder(folder):
 
 print("Building index node")
 root = args.vault_folder
+os.makedirs(os.path.join(root, ".obsidian"), exist_ok=True)
 links = process_folder(root)
 with open(os.path.join(root, "entry.md"), "w") as entry_note:
 	for link in links[:-1]:
